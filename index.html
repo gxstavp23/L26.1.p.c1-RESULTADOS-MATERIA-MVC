@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Materia (MVC)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 400px; padding: 15px; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px; }
+        button { padding: 8px 15px; margin-top: 10px; cursor: pointer; }
+        .form-group { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    
+    <script type="module">
+        import Cl_cSeccion from "./dist/controllers/Cl_cSeccion.js";
+        new Cl_cSeccion();
+    </script>
+
+    <section id="main_body">
+        <div class="container">
+            <h2>Resultados de la Sección</h2>
+            
+            <button type="button" id="main_btNuevoEstudiante">Nuevo Estudiante</button>
+            <hr>
+            
+            <div>
+                Cantidad de aprobados: <span id="main_lblAprobados">0</span><br>
+                Cantidad de reprobados: <span id="main_lblReprobados">0</span><br>
+                Nota promedio de la sección: <span id="main_lblPromedio">0.00</span><br>
+                Nombre del estudiante con mayor nota: <span id="main_lblMayorNota">N/A</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="estudiante" hidden>
+        <div class="container">
+            <h3>Procesar Estudiante</h3>
+            
+            <div class="form-group">
+                <label>Cédula:</label><br>
+                <input type="text" id="estudiante_inCedula" placeholder="Ej: 888">
+            </div>
+
+            <div class="form-group">
+                <label>Nombre:</label><br>
+                <input type="text" id="estudiante_inNombre" placeholder="Ej: Ana">
+            </div>
+            
+            <div class="form-group">
+                <label>Nota Final:</label><br>
+                <input type="number" id="estudiante_inNotaFinal" placeholder="Ej: 60">
+            </div>
+            
+            <div>
+                <button id="estudiante_btCancelar">Cancelar</button>
+                <button id="estudiante_btAceptar">Aceptar</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
